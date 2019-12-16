@@ -14,8 +14,8 @@
     flatten(root.Left)
     // for r 
     tmp := root.Right // 暂存
-    root.Right, root.Left = root.Left, nil 
-    if root.Right != nil { 
+    root.Right, root.Left = root.Left, nil
+    for root.Right != nil {  // for 直到6 
         root = root.Right
     }
     root.Right = tmp // 连上
