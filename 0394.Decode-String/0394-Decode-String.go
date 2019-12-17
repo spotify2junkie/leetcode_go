@@ -1,3 +1,10 @@
+/*
+this one is not original work 
+*/
+
+
+
+
 type item struct {
     prestr string
     loopNum int 
