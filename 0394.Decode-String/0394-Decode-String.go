@@ -14,7 +14,7 @@ type item struct {
 func helper(s string) string {
     var res string // 移动的单位
     var loopNum int 
-    var stack[]item // 通过item stack 实现
+        // 通过item stack 实现
     for step := 0 ; step < len(s); step++{
         v := s[step]
         if v >= '0' && v <= '9' {

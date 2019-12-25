@@ -1,74 +1,42 @@
-package problem0200
+// first BFS 
 
+var dx = [4]int{-1, 0, 1, 0}
+var dy = [4]int{0, 1, 0, -1}
 func numIslands(grid [][]byte) int {
-	// 获取 grid 的大小
-	m := len(grid) // number of column
-	if m == 0 {
-		return 0 //return if zero size
-	}
-	n := len(grid[0])
-
-	// bfs 搜索时，存放点坐标的队列
-	x := make([]int, 0, m*n) // make 存储, m*n 为容量值
-	y := make([]int, 0, m*n)
-
-	// 往队列中添加 (i,j) 点，并修改 (i,j) 点的值
-	// 避免重复搜索
-	var add = func(i, j int) {
-		x = append(x, i) // 局部
-		y = append(y, j)
-		grid[i][j] = '0'
-	}
-
-	// 从坐标队列中，取出坐标点
-	var pop = func() (int, int) {
-		i := x[0]
-		x = x[1:]
-		j := y[0]
-		y = y[1:]
-		return i, j
-	}
-
-	var bfs = func(i, j int) int {
-		if grid[i][j] == '0' {
-			return 0
-		}
-
-		add(i, j)
-
-		for len(x) > 0 {
-			i, j = pop()
-
-			// 搜索 (i,j) 点的 上下左右 四个方位
-			if 0 <= i-1 && grid[i-1][j] == '1' {
-				add(i-1, j)
-			}
-
-			if 0 <= j-1 && grid[i][j-1] == '1' {
-				add(i, j-1)
-			}
-
-			if i+1 < m && grid[i+1][j] == '1' {
-				add(i+1, j)
-			}
-
-			if j+1 < n && grid[i][j+1] == '1' {
-				add(i, j+1)
+	rows := len(grid)
+	if rows == 0 {return 0}
+	cols := len(grid[0])
+	count := 0	// 岛屿数
+	for x:=0; x<rows; x++ {
+		for y:=0; y<cols; y++ {
+			if grid[x][y] == '1' {
+				count++
+				BFS(grid, rows, cols, x, y)
 			}
 		}
-
-		return 1
 	}
-
-	res := 0
-	for i := 0; i < m; i++ {
-		for j := 0; j < n; j++ {
-			res += bfs(i, j)
-		}
-	}
-
-	return res
+	return count
 }
+
+
+// BFS，rows,cols为grid行与列数， x,y为当前起始点行、列坐标
+func BFS(grid [][]byte, rows, cols, x, y int) {
+	queue := make([]int, 0)
+	queue = append(queue, x, y)		// 将广度优先搜索的起始点坐标加入队尾
+	grid[x][y] = '2'
+	for len(queue) != 0 {	// 队列非空
+		curX, curY := queue[0], queue[1]  //pop栈，然后对栈进行操作,
+		queue = queue[2:]		// 更新栈
+		for k:=0; k<4; k++ {
+			newX, newY := curX + dx[k], curY + dy[k]
+			if newX>=0 && newX<rows && newY>=0 &&newY<cols && grid[newX][newY]=='1' {
+				grid[newX][newY] = '2'
+				queue = append(queue, newX, newY)	// 将符合该岛屿一部分的格子的坐标加入队列 (入栈)
+			}
+		}
+	}
+}
+
 
 // another one ---
 // DFS
@@ -93,7 +61,7 @@ func dfs(grid [][]byte, x, y int) { // 递归
 		return
 	}
 	grid[x][y] = '0'
-	for i := 0; i < 4; i++ { // 遍历当前位置的四个方向，并累计与这四个方向连接的土地面积
+	for i := 0; i < 4; i++ { // 遍历当前位置的四个方向，
 		dfs(grid, x+dx[i], y+dy[i]) // 这个真的很妙
 	}
 }
