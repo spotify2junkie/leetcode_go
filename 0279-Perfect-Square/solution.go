@@ -11,7 +11,7 @@ func numSquares(n int) int {
     }
 
     for i:=1;i < n+1;i++ {
-        dp[i] = i 
+        dp[i] = i //因为每个最长的状态是1的累加 
         for _,s :=range perfects {
             if i-s >= 0 {
                 dp[i] = min(dp[i],dp[i-s]+1) // either itself or 12-9 = 3  , dp[3] + 1
