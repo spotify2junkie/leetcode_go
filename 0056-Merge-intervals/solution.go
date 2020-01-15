@@ -9,12 +9,12 @@ func merge(its [][]int) [][]int {
     if len(its) <= 1 {
         return its 
     }
-    sort.Slice(its, func(i, j int) bool {
+    sort.Slice(its, func(i, j int) bool { //nnn sort slice   
         return its[i][0]<its[j][0]
     })
     res := make([][]int, 0, len(its))
     temp := its[0]
-    for i:=1;i<len(its);i++{
+    for i:=1;i<len(its);i++{ //nnn start from i=1
         if its[i][0]<=temp[1] {
             temp[1] =  max(temp[1], its[i][1])
         } else {
