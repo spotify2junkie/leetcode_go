@@ -20,8 +20,8 @@ func search(i, j, index int,board [][]byte,word string) bool {
         return false
     }
     temp := board[i][j]  //nnn why need this 
-    board[r][c] = 0 
+    board[r][c] = 0 // so no more searching if this index correct 
     if search(i-1,j,index+1,board,word) || search(i+1,j,index+1,board,word) || search(i,j+1,index+1,board,word) || search(i,j-1,index+1,board,word) { return true }
-    board[i][j] = temp
-    return false
+    board[i][j] = temp // if not right still need to make up this location for it's original value 
+    return false 
 }
