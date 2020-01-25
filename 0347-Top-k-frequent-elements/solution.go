@@ -22,3 +22,34 @@ func topKFrequent(nums []int, k int) []int {
     }
     return res 
 }
+
+
+
+
+
+func canPartition(nums []int) bool {
+    sum := 0 
+    for i:=0;i < len(nums);i++ {
+        sum +=nums[i]
+    }
+    sum = sum>>1
+    dp := make([][]bool,len(nums)+1) // 2-d matrix
+    for i := range dp {
+        dp[i] = make([]bool,sum+1) // make for row slice
+    }
+    for i:=0;i < len(nums)+1;i++ { // len(nums)+1
+        dp[i][0] = true
+    }
+    for j:=1; j < sum+1;j++ {  // do not do dp[0][0] 
+        dp[0][j] = false
+    }
+    
+    for i:=1; i < len(nums)+1;i++ {
+        for j:=1;j<sum+1;j++ {
+            if j >= nums[i-1] {
+                dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i-1]]
+            }
+        }
+    }
+    return dp[len(nums)][sum]
+}

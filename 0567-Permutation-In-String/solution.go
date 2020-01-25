@@ -1,33 +1,43 @@
-// sliding window 
-// dont quite get why use count 
-func checkInclusion(s1 string, s2 string) bool {
-    var freq [256]int
-    if len(s2) == 0 || len(s2) < len(s1) {
-        return false
-    }
-    for i:=0; i < len(s1); i++ {
-        freq[s1[i]-'a']++ // record s1 byte
-    }
-    left, right, count := 0, 0, len(s1)
+// sliding window
+// dont quite get why use count
+package main
 
-    for right < len(s2) {
-        if freq[s2[right]-'a'] >= 1 {
-            count--
+import "fmt"
+
+func checkInclusion(s1 string, s2 string) bool {
+    var need [128]int
+    var have [128]int
+    for i:= range s1 {
+        need[s1[i]]++
+    }
+    s1l := len(s1)
+    s2l := len(s2)
+    for left,right,count := 0,0,0;right<s2l; {
+        if have[s2[right]] < need[s2[right]] {
+			// 出现了 window 中缺失的字母  针对只出现一次还比较好
+			count++
+		}
+		have[s2[right]]++
+		right++
+		if count == s1l {
+            return true 
         }
-        freq[s2[right]-'a']--
-        right++
-        //end of ths sweep
-        if count == 0 { // why here 
-			return true
-		} 
-        if right-left ==len(s1) {
-            if freq[s2[left]-'a'] >= 0 {
-                count++
-            }
-            freq[s2[left]-'a']++
-            left++
-        }
+        if right >= s1l {
+			left = right-s1l
+			if have[s2[left]] == need[s2[left]] {
+				// 出现了 window 中缺失的字母
+				count--
+			}
+		have[s2[left]]--
+		}
+
         
     }
-    return false 
+    return false
+}
+
+func main() {
+	fmt.Println(checkInclusion("ab","eidbaoo"))
+	fmt.Println(checkInclusion("ab","eidboaoo"))
+	fmt.Println(checkInclusion("hello","ooolleoooleh"))
 }
