@@ -1,7 +1,7 @@
 /*
 this one is not original work 
 */
-
+//nnn array slice 
 
 
 

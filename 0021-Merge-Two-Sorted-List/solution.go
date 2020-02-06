@@ -1,12 +1,5 @@
-/ 非递归，使用 指针思想
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
- func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+//nnn linked list  
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
     head := &ListNode{} // define 一个空的 
     tmp := head   // tmp 作为head 的执政 
     for l1 != nil && l2 != nil {

@@ -1,4 +1,4 @@
-//nnn backtracking 
+//nnn slice dfs backtracking 
 func partition(s string ) [][]string {
     result := [][]string{}
     current := make([]string,0,len(s))

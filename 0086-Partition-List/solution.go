@@ -1,4 +1,4 @@
-//Linked List and two pointers 
+// linked list 
 /**
  * Definition for singly-linked list.
  * type ListNode struct {

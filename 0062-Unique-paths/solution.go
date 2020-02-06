@@ -1,4 +1,4 @@
-// dynamic programming
+// dp  dynamic programming
 func uniquePaths(m int, n int) int {
     //nnn robot move steps 
     dp := make([][]int,n) //nnn n for indexing 

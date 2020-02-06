@@ -1,4 +1,4 @@
-// hash table 
+// hash table, map  
 func majorityElement(nums []int) int {
 	m := make(map[int]int)
 	for _, v := range nums {

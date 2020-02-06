@@ -1,3 +1,4 @@
+//nnn map
 func twoSum(nums []int, target int) []int {
 	maps := make(map[int]int) 
 	result := make([]int, 0)

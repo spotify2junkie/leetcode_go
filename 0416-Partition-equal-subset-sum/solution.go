@@ -1,3 +1,4 @@
+//nnn dp 
 func canPartition(nums []int) bool {
     sum := 0 
     for _, n := range nums {

@@ -1,4 +1,4 @@
-// dynamic programming 
+// dp  dynamic programming 
 func maxProfit(prices []int) int {
     max := 0
     temp := 0

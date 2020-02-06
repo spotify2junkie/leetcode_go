@@ -6,6 +6,7 @@
  *     Right *ListNode
  * }
  */
+ //nnn binary tree
  func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	// think of what this function do ? 
 	// first consider strange situation

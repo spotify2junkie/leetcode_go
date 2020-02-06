@@ -1,4 +1,4 @@
-// back tracking
+// backtracking
 package main
 
 import "fmt"

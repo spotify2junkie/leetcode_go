@@ -7,7 +7,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	sum := 0 
 	carry := 0 // 初始化carry 
 	for l1 != nil || l2 != nil || carry > 0 {
-		sum = carry // 传入carry
+		sum = carry ///nnn 传入carry
 
 		if l1 != nil { // if 条件, 我还以为是循环
 			sum += l1.Val

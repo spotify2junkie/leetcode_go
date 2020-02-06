@@ -1,4 +1,4 @@
-// hash table, slice
+// sliding window hash table, slice
 package main
 
 import "fmt"

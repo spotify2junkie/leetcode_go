@@ -1,31 +1,4 @@
-/*
-本来想着通过map得到
-查看后面一个元素，也就不要入栈
-检查长度就好
-*/
-
-// 一份错误解答
-// func isValid(s string) bool {
-// 	symbol := map[string]string{ "(" : ")", "[" : "]", "{" : "}"}
-//     b := []string{}
-//     for index, value := range s {
-//         if index == len(s) -1 {
-//             break
-//         }
-//         if string(s[index+1]) == symbol[string(value)] {
-//             b = append(append(b,string(value)), symbol[string(value)])
-//         }
-// 
-//     }
-// 
-//     if len(b) == len(s) {
-//         return true 
-//     }
-// 
-//     return false
-// }
-// 但是没考虑{[]} 这种情况就fail了
-
+//nnn stack 
 func isValid(s string) bool {
 	stack := []string{}
 	// 后括号映射表

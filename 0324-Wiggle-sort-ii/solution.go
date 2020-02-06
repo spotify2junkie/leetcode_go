@@ -1,3 +1,4 @@
+//nnn reraange array 
 func wiggleSort(nums []int)  {
     n := len(nums)
 	temp := make([]int, n)

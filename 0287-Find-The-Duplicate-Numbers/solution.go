@@ -1,3 +1,4 @@
+//nnn map
 func findDuplicate(nums []int) int {
     counter := map[int]int{}
     res := 0

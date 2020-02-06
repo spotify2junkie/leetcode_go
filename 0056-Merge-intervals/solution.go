@@ -1,4 +1,4 @@
-// merge and struct
+// slice play, array  merge and struct
 package main
 
 import (

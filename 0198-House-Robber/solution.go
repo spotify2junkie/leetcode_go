@@ -1,4 +1,4 @@
-// dynamic programming 
+// dp  dynamic programming 
 // 暴力！
 func rob(nums []int) int {
     if len(nums) == 0 {
@@ -10,7 +10,7 @@ func rob(nums []int) int {
     if len(nums) == 2 {
         return max(nums[0],nums[1])
     }
-    dp := make([]int,len(nums))
+    dp := make([]int,len(nums)) //nnn not len(nums)+1 
     dp[0] = nums[0]
     dp[1] = nums[1]
     maxv := max(dp[0],dp[1])

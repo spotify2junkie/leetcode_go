@@ -1,3 +1,4 @@
+//nnn recursion 
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -19,4 +20,4 @@
 func kthSmallest(root *TreeNode, k int) int {
     res := inorderTraversal(root)
     return res[k-1]
-}
+}  

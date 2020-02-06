@@ -1,3 +1,4 @@
+//nnn math using recursion 
 func myPow(x float64, n int) float64 {
     if x < 0 {
         return 1.0 / power(x,-n)

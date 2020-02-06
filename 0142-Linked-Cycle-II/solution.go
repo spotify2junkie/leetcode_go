@@ -1,4 +1,4 @@
-// linked list , using hash table 
+// map  linked list , using hash table 
 
 func detectCycle(head *ListNode) *ListNode {
     cur := head  // 为什么每次都要存一下 可以不存吗 

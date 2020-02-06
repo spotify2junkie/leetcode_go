@@ -1,4 +1,4 @@
-// hash table 
+//dfs  hash table 
 
 func dfs (i,j,lenR,lenC int,board[][]byte) {
     if i< 0 || j<0 || i>=lenR || j>=lenC || board[i][j] == 'X' || board[i][j] == 'G' {return }

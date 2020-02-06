@@ -1,3 +1,5 @@
+//nnn BFS 
+
 func exist(board [][]byte, word string) bool {
     for i:=0;i<len(board);i++ {
         for j:=0;j<len(board[0]);j++ {

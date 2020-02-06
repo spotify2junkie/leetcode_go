@@ -1,3 +1,4 @@
+//nnn dp 
 func wordBreak(s string, wordDict []string) bool {
     dp := make([]bool,len(s))
     for i:=0; i < len(s);i++ {

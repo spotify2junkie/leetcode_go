@@ -1,3 +1,4 @@
+//nnn slice , array 
 func longestConsecutive(nums []int) int {
 	count := make(map[int]int)
 	res := 0

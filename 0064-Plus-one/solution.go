@@ -1,3 +1,4 @@
+//nnn digits math 
 func plusOne(digits []int) []int {
     i := len(digits)-1
     for { //nnn new for loop format 

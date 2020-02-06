@@ -1,4 +1,4 @@
-// two pointers 
+//nnn sliding window , // two pointers 
 
 // func maxArea(height []int) int {
 //     area := 0

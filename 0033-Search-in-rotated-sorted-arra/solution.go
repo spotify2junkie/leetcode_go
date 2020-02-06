@@ -1,3 +1,4 @@
+//nnn binary ssearch 
 package main
 
 import "fmt"

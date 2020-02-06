@@ -1,4 +1,4 @@
-// 
+//nnn map 
 func subarraySum(nums []int, k int) int {
 	rec := make(map[int]int, len(nums)) // 什么时候给index
 	res, sum := 0, 0

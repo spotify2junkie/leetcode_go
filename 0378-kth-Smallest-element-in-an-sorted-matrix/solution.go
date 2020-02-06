@@ -1,3 +1,4 @@
+//nnn array slice 
 func kthSmallest(matrix [][]int, k int) int {
 	if len(matrix) <=0 {
 		return 0

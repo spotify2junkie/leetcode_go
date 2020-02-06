@@ -1,4 +1,4 @@
-// dynamic programming , backpack 
+//nnn dp 
 func findTargetSumWays(nums []int, S int) int {
     // define sum
     sum := 0 

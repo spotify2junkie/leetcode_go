@@ -1,3 +1,4 @@
+//nnn dp 
 func maximalSquare(matrix [][]byte) int {
     m := len(matrix)
     if m ==0 {

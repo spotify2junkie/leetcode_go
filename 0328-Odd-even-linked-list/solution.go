@@ -1,3 +1,4 @@
+//nnn linked list 
 func oddEvenList(head *ListNode) *ListNode {
     if head == nil {
         return head 

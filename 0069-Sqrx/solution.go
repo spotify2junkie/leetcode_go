@@ -1,3 +1,4 @@
+//nnn math 
 func mySqrt(x int) int {
     res := x 
     for res*res > x {

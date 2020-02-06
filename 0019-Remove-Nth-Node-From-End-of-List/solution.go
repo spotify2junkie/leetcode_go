@@ -1,16 +1,4 @@
-// func removeNthFromEnd(head *ListNode, n int) *ListNode {
-//     if head == nil {
-//         return nil
-//     }
-//     for i:=1;head.Next != nil;i++ {
-//         if i+1 == n {
-//             curNext := head.Next
-//             head.Next = curNext.Next
-//         }
-//     }
-//     return head
-// }
-
+//nnn linked list, two pointers  
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
     node := &ListNode{ Next : head } // why ? 因为取地址 ,作为指针
     fast, slow, step := node, node, 0

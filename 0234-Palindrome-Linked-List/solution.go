@@ -1,3 +1,4 @@
+//nnn linked list 
 func isPalindrome(head *ListNode) bool {
     res := []int{}
     for head != nil {

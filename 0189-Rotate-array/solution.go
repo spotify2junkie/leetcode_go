@@ -1,3 +1,4 @@
+//nnn play with reverse 
 func rotate(nums []int, k int)  {
     if len(nums) == 0 || k == 0 {
         return 

@@ -1,4 +1,4 @@
-
+//nnn slice array
 
 func canCompleteCircuit(gas []int, cost []int) int {
 	var minIdx, sum int

@@ -5,6 +5,7 @@
  *     Next *ListNode
  * }
  */
+//nnn linked list 
 func reverseList(head *ListNode) *ListNode {
     var prev *ListNode
     for head != nil {
