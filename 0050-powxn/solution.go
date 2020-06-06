@@ -13,9 +13,9 @@ func pow(x float64, n int) float64 {
     if n == 0 {
         return 1 
     }
-    res := pow(x,n>>1)
-    if n&1 == 0 {  //nnn 可以被整除
-        return res*res
-    }
-    return res*res*x
+res := pow(x,n>>1)
+         if n&1 == 0 {  //nnn 可以被整除
+             return res*res
+         }
+     return res*res*x
 }
