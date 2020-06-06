@@ -1,0 +1,43 @@
+###     Notes 
+
+- backtrack 肯定会用到递归
+- 相信一个func 可以解决
+- 对func 找好边界情况以及执行顺序
+
+
+
+
+
+### [Notes from Fucking Algo](https://github.com/labuladong/fucking-algorithm) 
+
+- 路径：也就是已经做出的选择。
+- 选择列表：也就是你当前可以做的选择。
+- 结束条件：也就是到达决策树底层，无法再做选择的条件。
+
+
+
+代码方面的框架
+
+```python
+result = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
+    
+    for 选择 in 选择列表:
+        做选择
+        backtrack(路径, 选择列表)
+        撤销选择
+```
+
+**其核心就是 for 循环里面的递归，在递归调用之前「做选择」，在递归调用之后「撤销选择」**
+
+#### 全排列问题 
+
+<img src="全排列.png" alt="image-20200606204037909" style="zoom:33%;" />
+
+<img src="全排列路劲.png" alt="image-20200606204247427" style="zoom:33%;" />
+
+**我们定义的 `backtrack` 函数其实就像一个指针，在这棵树上游走，同时要正确维护每个节点的属性，每当走到树的底层，其「路径」就是一个全排列**
+
