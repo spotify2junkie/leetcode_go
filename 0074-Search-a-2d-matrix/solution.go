@@ -18,7 +18,7 @@ func searchMatrix(matrix [][]int, target int) bool {
     for r<m && m[r][0] < target {
         r++
     }
-    r--  // get the right row that match r<target 
+    r--  //nnn get the right row that match r<target 
     // binary search 
     i,j := 0,n-1
     for i<=j {
