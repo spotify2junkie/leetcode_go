@@ -65,15 +65,6 @@ def binarySearch(nums, target):
 
 
 
-## Tasks
-
-- [ ] check index_of_min  
-- [ ]  为啥 显示的是 check right neighbor 
-
-
-
-
-
 ### Notes on Leetcode 702 size 未知如何解题 
 
 - size 未知怎么二分？ 
@@ -84,4 +75,27 @@ def binarySearch(nums, target):
 
 - Start 和 end 的起始位置要注意选用哪个， 
 - 如果是数组的话可以选用 0, len(nums)-1 ; 如果是一个数字n的话还是选用 1, n .
+
+
+
+### Notes on template 3 
+
+- 大部分问题可以解决
+
+
+
+### Summary 二分搜索核心四点要素
+
+- 1、初始化：start=0、end=len-1
+- 2、循环退出条件：start + 1 < end
+- 3、比较中点和目标值：A[mid] ==、 <、> target
+- 4、判断最后两个元素是否符合：A[start]、A[end] ? target
+
+
+
+## Template 3 和 1 的比较 
+
+- template 3 `start + 1 < end` 
+- Templaote 1 `start <= end`
+- template 1 :` left = mid + 1 , right = mid -1` ; template 3 `left = mid , right = mid`
 
