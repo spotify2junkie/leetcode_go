@@ -44,6 +44,28 @@ There are **two types** of linked list: singly linked list and doubly linked lis
       }
   ```
 
-- [ ] to-do [link](https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1216/)
+
+
+
+## 官方双指针模板
+
+```go
+slow, fast := &ListNode{}, &ListNode{}
+for slow != nil && fast != nil && fast.next != nil {
+  	slow = slow.Next
+  	fast = fast.Next
+  if slow == fast {
+    	return true
+  }
+}
+return false 
+```
+
+- 官方提供的tips:
+
+  - **1. Always examine if the node is null before you call the next field.**
+  - **2. Carefully define the end conditions of your loop.**
+  - **3. In many cases, you need to track the previous node of the current node.**
 
   
+

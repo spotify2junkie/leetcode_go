@@ -7,7 +7,7 @@
  */
 //nnn linked list 
 func reverseList(head *ListNode) *ListNode {
-    var prev *ListNode
+    var prev *ListNode //nnn caont use &ListNode, that will give zero  
     for head != nil {
         temp := head.Next  // 暂存
         head.Next = prev // 指向之前的节点
