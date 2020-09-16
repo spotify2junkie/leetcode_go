@@ -1,4 +1,4 @@
-//nnn slice , array 
+//nnn slice , array
 func longestConsecutive(nums []int) int {
 	m := map[int]int{}
 	res := 0
@@ -8,7 +8,7 @@ func longestConsecutive(nums []int) int {
 		if !ok {
 			left := m[n-1]
 			right := m[n+1]
-			m[n] = 1 + left + right
+			m[n] = 1 + left + right // represent how the length is for the middle point
 			if left > 0 {
 				m[n-left] = m[n]
 			}
