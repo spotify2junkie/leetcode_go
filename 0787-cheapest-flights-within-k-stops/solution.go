@@ -6,7 +6,7 @@ func findCheapestPrice(n int, flights [][]int, src int, dst int, K int) int {
 		src := flights[i][0]
 		fmap[src] = append(fmap[src], flights[i][1:])
 	}
-	pq := make(PQ, 0, n)
+	pq := make(PQ, 0, n) // why
 	// src heap init
 	heap.Push(&pq, &city{
 		price:     0,     // 费用为 0
