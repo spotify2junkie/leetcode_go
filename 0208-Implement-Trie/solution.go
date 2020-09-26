@@ -1,9 +1,7 @@
-package mains
-
 type Trie struct {
-	value   byte //define byte for slice purpose
-	childen [26]*Trie
-	end     int
+	value byte
+	c     [26]*Trie
+	end   int
 }
 
 /** Initialize your data structure here. */
@@ -13,50 +11,42 @@ func Constructor() Trie {
 
 /** Inserts a word into the trie. */
 func (this *Trie) Insert(word string) {
-	node := this
-	size := len(word)
-	for i := 0; i < size; i++ {
-		idx := word[i] - 'a' // unicode expression can get rune , value: a-z
-		if node.childen[idx] == nil {
-			node.childen[idx] = &Trie{value: word[i]} //get address for value
+	s := len(word)
+	for i := 0; i < s; i++ {
+		idx := int(word[i] - 'a')
+		if this.c[idx] == nil {
+			this.c[idx] = &Trie{value: word[i]}
 		}
-		node = node.childen[idx]
-
+		this = this.c[idx]
 	}
-
-	node.end++
+	this.end++
 }
 
 /** Returns if the word is in the trie. */
 func (this *Trie) Search(word string) bool {
-	node := this
 	size := len(word)
 	for i := 0; i < size; i++ {
-		idx := word[i] - 'a' // unicode expression
-		if node.childen[idx] == nil {
+		idx := int(word[i] - 'a')
+		if this.c[idx] == nil {
 			return false
 		}
-		node = node.childen[idx]
-
+		this = this.c[idx]
 	}
-
-	if node.end > 0 {
+	if this.end > 0 {
 		return true
 	}
-
 	return false
 }
 
 /** Returns if there is any word in the trie that starts with the given prefix. */
 func (this *Trie) StartsWith(prefix string) bool {
-	node := this
 	size := len(prefix)
 	for i := 0; i < size; i++ {
-		idx := prefix[i] - 'a'        //define 开头
-		if node.childen[idx] == nil { // if any happen
+		idx := prefix[i] - 'a'  //define 开头
+		if this.c[idx] == nil { // if any happen
 			return false
 		}
-		node = node.childen[idx]
+		this = this.c[idx]
 	}
 
 	return true
