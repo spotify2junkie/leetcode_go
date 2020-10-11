@@ -33,8 +33,8 @@ func InsertNode(head, node *ListNode) {
 	for head.Next != nil && head.Next.Val < node.Val {
 		head = head.Next
 	}
-	node.Next = head.Next
-	head.Next = node // reset back
+	node.Next = head.Next // reverse order
+	head.Next = node      // reset back
 }
 
 // @lc code=end
