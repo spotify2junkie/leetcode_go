@@ -14,7 +14,6 @@ func genPermute(nums []int, p []int, used *[]bool, res *[][]int) {
 	if len(p) == len(nums) {
 		temp := make([]int, len(p))
 		copy(temp, p)
-		fmt.Println(temp)
 		*res = append(*res, temp)
 		return // 这个避免了return 其他东西
 	}
