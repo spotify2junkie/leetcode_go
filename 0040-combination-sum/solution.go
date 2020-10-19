@@ -1,36 +1,37 @@
-import (
-    "sort"
-)
+import "sort"
 
-func combinationSum2(candidates []int, target int) [][]int {
-    if len(candidates) == 0 {
-        return [][]int{}
-    }
-    path, res := []int{}, [][]int{}
-    sort.Ints(candidates)
-    backtrack(candidates, target, path, &res, 0)
-    return res
+func combinationSum2(c []int, t int) [][]int {
+	res := [][]int{}
+	if len(c) == 0 {
+		return res
+	}
+	p := []int{}
+	sort.Ints(c)
+	genPermute(c, t, p, 0, &res)
+	return res
 }
 
+func genPermute(c []int, t int, p []int, index int, res *[][]int) {
+	if t <= 0 {
+		if t < 0 {
+			return
+		}
+		temp := make([]int, len(p))
+		copy(temp, p)
+		*res = append(*res, temp)
+		return
+	}
 
-func backtrack(candidates []int, target int, path []int, res *[][]int, idx int) {
-    if target == 0 {
-        tmp := make([]int, len(path))
-        copy(tmp, path)
-        *res = append(*res, tmp)
-        return 
-    }
-    for i:= idx; i < len(candidates); i++ { //nnn idx 是外部结果
-        if i > idx && candidates[i] == candidates[i-1] {
-            continue
-        }
-        if target >= candidates[i] {
-            path = append(path, candidates[i])
-            backtrack(candidates, target-candidates[i], path, res, i+1)  //nnn this is index 
-            path = path[:len(path)-1]
-        }
-    }
-    return 
+	for i := index; i < len(c); i++ {
+		if c[i] > t { // 这里可以剪枝优化
+			break
+		}
+		if i > index && c[i] == c[i-1] {
+			continue
+		}
+		p = append(p, c[i])
+		genPermute(c, t-c[i], p, i+1, res)
+		p = p[:len(p)-1]
+	}
+	return
 }
-
-
