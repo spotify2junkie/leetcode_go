@@ -17,13 +17,13 @@ func openLock(deadends []string, target string) int {
 			if val == target {
 				return level
 			}
-			for j := 0; j < 4; j++ {
+			for j := 0; j < 4; j++ { // 开始bfs
 				next := getNextOrPrevValue(val[:j], val[j+1:], val[j], false) //  处理这个情况
 				if _, ok := visited[next]; !ok {
 					queue = append(queue, next)
 					visited[next] = struct{}{}
 				}
-				prev := getNextOrPrevValue(val[:j], val[j+1:], val[j], true)
+				prev := getNextOrPrevValue(val[:j], val[j+1:], val[j], true) // 往前往后走下
 				if _, ok := visited[prev]; !ok {
 					queue = append(queue, prev)
 					visited[prev] = struct{}{}

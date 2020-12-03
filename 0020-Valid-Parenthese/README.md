@@ -9,4 +9,3 @@
 # Furthermore
 
 
-acme.sh --issue -d luoyuhui.world -d www.luoyuhui.world --webroot /var/www/luoyuhui.world/
