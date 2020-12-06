@@ -1,38 +1,28 @@
-// dynamic programming 
 func lengthOfLIS(nums []int) int {
-    if len(nums) == 1 {
-        return 1
-    }
-    if len(nums) == 0 {
-        return 0 
-    }
-    if len(nums) == 2 {
-        if max(nums[0],nums[1]) == nums[0] {
-            return 1
-        } else {
-            return 2
-        }
-    }
-    dp := make([]int,len(nums)+1)
-    dp[0] = 0 
-    res := 0 
-    for i:=1;i <= len(nums); i++ {
-        for j:=1; j < i;j++ {
-            if nums[j-1] < nums[i-1] {
-                dp[i] = max(dp[i],dp[j])
-            }
-        }
-        dp[i] = dp[i]+1 
-        res = max(res,dp[i]) // get longest among all , probably not the last one 
-    }
-    return res // 注意一下
+	dp := make([]int, len(nums))
+	// for _,i := range dp {
+	//     dp[i] = 1
+	// }
+	// base case：dp 数组全都初始化为 1
+	for i := 0; i < len(nums); i++ {
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] {
+				dp[i] = max(dp[i], dp[j])
+			}
+		}
+		dp[i] = dp[i] + 1
+	}
+
+	res := 0
+	for i := 0; i < len(dp); i++ {
+		res = max(res, dp[i])
+	}
+	return res
 }
 
-
-func max(i, j int) int {
-    if i > j {
-        return i 
-    } else {
-        return j 
-    }
-}
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+} 
