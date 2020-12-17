@@ -1,13 +1,8 @@
-// greedy algorithm
-package main
-
-import "fmt"
-
 func canJump(nums []int) bool {
 	for i := len(nums) - 2; i >= 0; i-- { //nnn start from 倒数第二个
 		// find 0
 		if nums[i] != 0 {
-			continue //nnn continue to next loop condition
+			continue
 		}
 		j := i - 1 //nnn j 是等于0的前面一个index
 		for ; j >= 0; j-- {
@@ -25,8 +20,4 @@ func canJump(nums []int) bool {
 	}
 
 	return true
-}
-
-func main() {
-	fmt.Println(canJump([]int{2, 3, 1, 1, 4}))
 }
