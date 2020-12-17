@@ -17,7 +17,7 @@ func generatePermutation(nums []int, index int, p []int, res *[][]int, used *[]b
 	}
 	for i := 0; i < len(nums); i++ {
 		if !(*used)[i] {
-			(*used)[i] = true
+			(*used)[i] = true // 进入选择
 			p = append(p, nums[i])
 			generatePermutation(nums, index+1, p, res, used) // 进入了 // return 了之后要改掉used
 			//p = p[:len(p)-1] // 撤销了nums

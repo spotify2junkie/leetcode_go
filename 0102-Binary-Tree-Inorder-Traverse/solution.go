@@ -31,7 +31,7 @@ func levelOrder(root *TreeNode) [][]int {
 				cur_slice = append(cur_slice, r.Val)
 			}
 		}
-		queue = queue[s:]
+		queue = queue[s:] // 更新队列
 		if len(cur_slice) != 0 {
 			val_slice = append(val_slice, cur_slice)
 		}
