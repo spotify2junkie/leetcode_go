@@ -1,6 +1,6 @@
 // hash table,linked list , two pointes
 func hasCycle(head *ListNode) bool {
-	hash := make(map[*ListNode]int)
+	hash := make(map[*ListNode]int) // 这个添加方式
 	for head != nil {
 		if _, ok := hash[head]; ok { // 查看是否存在
 			return true

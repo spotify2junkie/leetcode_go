@@ -19,7 +19,7 @@ func helper(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	root.Left, root.Right = root.Right, root.Left
+	root.Left, root.Right = root.Right, root.Left // invert
 	helper(root.Left)
 	helper(root.Right)
 	return root
