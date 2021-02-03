@@ -8,7 +8,7 @@ func isPalindrome(head *ListNode) bool {
 	// 按照规则对比值
 	l, r := 0, len(res)-1
 	for l < r {
-		if res[l] != res[r] {
+		if res[l] != res[r] { // start from end,start
 			return false
 		}
 		l++ //这个可以
