@@ -1,7 +1,6 @@
 // 备忘录
-
 func coinChange(coins []int, amount int) int {
-	memos := make(map[int]int, len(coins))
+	memos := make(map[int]int, amount+1)
 	var dp func(int) int
 	dp = func(n int) int {
 		if _, ok := memos[n]; ok {
@@ -14,12 +13,12 @@ func coinChange(coins []int, amount int) int {
 			return -1
 		}
 		res := 1<<31 - 1
-		for _, c := range coins {
-			sub := dp(n - c)
+		for _, element := range coins {
+			sub := dp(n - element)
 			if sub == -1 {
 				continue
 			}
-			res = min(res, 1+sub)
+			res = min(res, sub+1)
 		}
 		if res != 1<<31-1 {
 			memos[n] = res
@@ -27,6 +26,7 @@ func coinChange(coins []int, amount int) int {
 			memos[n] = -1
 		}
 		return memos[n]
+
 	}
 	return dp(amount)
 }
