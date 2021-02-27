@@ -1,7 +1,5 @@
-//nnn DFS 
+//nnn DFS
 package main
-
-import "fmt"
 
 func subsets(nums []int) [][]int {
 	res := make([][]int, 1, 1024)
@@ -11,8 +9,4 @@ func subsets(nums []int) [][]int {
 		}
 	}
 	return res
-}
-
-func main() {
-	fmt.Println(subsets([]int{1, 2, 3}))
 }
