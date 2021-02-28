@@ -20,7 +20,7 @@ func genPermute(nums []int, p []int, used *[]bool, res *[][]int) {
 
 	for i := 0; i < len(nums); i++ {
 		if !(*used)[i] {
-			(*used)[i] = true
+			(*used)[i] = true // 因为排列可以乱序，就需要记录是否使用了这个元素
 			p = append(p, nums[i])
 			genPermute(nums, p, used, res)
 			(*used)[i] = false
