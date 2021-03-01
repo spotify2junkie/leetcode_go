@@ -6,7 +6,7 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 	if m == 1 {
 		return reverseRange(head, n)
 	}
-	head.Next = reverseBetween(head.Next, m-1, n-1)
+	head.Next = reverseBetween(head.Next, m-1, n-1) // 相对位置
 	return head
 }
 
