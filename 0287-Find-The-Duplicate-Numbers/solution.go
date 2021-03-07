@@ -6,7 +6,7 @@ func findDuplicate(nums []int) int {
 		counter[num]++
 	}
 	for key := range counter {
-		if counter[key] > 1 {
+		if counter[key] > 1 { // map 这种写法也可以
 			res = key // 为啥需要赋值bunengreturn
 		}
 	}
