@@ -7,7 +7,7 @@ func canCompleteCircuit(gas []int, cost []int) int {
 		sum += gas[i] - cost[i]
 		if sum < min { // start_idx
 			min = sum
-			minIdx = i
+			minIdx = i // 记录min_idx
 		}
 	}
 	if sum < 0 {

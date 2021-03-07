@@ -9,7 +9,7 @@ func lengthOfLongestSubstring(s string) int {
 	l, r := 0, 0
 	count := make(map[byte]int)
 	for r < len(s) {
-		c := r
+		c := r 
 		count[c]++
 		right++
 		if _, ok := count[c]; ok >= 1 {
