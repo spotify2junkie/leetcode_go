@@ -14,5 +14,4 @@ func backtrack(nums []int, start int, track []int, res *[][]int) {
 		backtrack(nums, i+1, track, res)
 		track = track[:len(track)-1]
 	}
-	``
 }
