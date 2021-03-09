@@ -1,9 +1,9 @@
 func openLock(deadends []string, target string) int {
-	deads := make(map[string]struct{})
+	deads := make(map[string]string)
 	for _, dead := range deadends {
-		deads[dead] = struct{}{}
+		deads[dead] = "ok"
 	}
-	visited := make(map[string]struct{})
+	visited := make(map[string]string)
 	queue := []string{"0000"}
 	var level int
 	for len(queue) > 0 {
@@ -21,12 +21,12 @@ func openLock(deadends []string, target string) int {
 				next := getNextOrPrevValue(val[:j], val[j+1:], val[j], false) //  处理这个情况
 				if _, ok := visited[next]; !ok {
 					queue = append(queue, next)
-					visited[next] = struct{}{}
+					visited[next] = "ok"
 				}
 				prev := getNextOrPrevValue(val[:j], val[j+1:], val[j], true) // 往前往后走下
 				if _, ok := visited[prev]; !ok {
 					queue = append(queue, prev)
-					visited[prev] = struct{}{}
+					visited[prev] = "ok"
 				}
 			}
 		}
