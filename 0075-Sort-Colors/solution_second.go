@@ -14,7 +14,7 @@ func sortColors(nums []int)  {
         } else if num == 1 {
             nums[b] = 2 
             b++
-            nums[w] = 1
+            nums[w] = 1 aaa
             w++
         } else if num == 2 {
             nums[b] = 2
