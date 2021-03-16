@@ -16,8 +16,8 @@ func quick(nums []int, start, end int) {
         
         nums[j], nums[start] = nums[start], nums[j]
         
-        quick(nums, start, j - 1)
-        quick(nums, j + 1, end)
+        quick(nums, start, j - 1) // 这个地方是 start, j-1
+        quick(nums, j + 1, end) // 这个地方是 j+1, end 
     }
 }
 
